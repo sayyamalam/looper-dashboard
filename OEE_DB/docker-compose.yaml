@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  db:
+    build:
+      context: ./postgres_with_data
+      dockerfile: Dockerfile
+    container_name: oee_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - oee_network
+
+  fastapi:
+    build:
+      context: ./fastapi
+      dockerfile: Dockerfile
+    container_name: oee_fastapi
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: password
+      DB_NAME: postgres
+      DB_HOST: db
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    networks:
+      - oee_network
+
+  dash:
+    build:
+      context: ./dash
+      dockerfile: Dockerfile
+    container_name: oee_dash
+    environment:
+      API_BASE_URL: "http://oee_fastapi:8000"
+    depends_on:
+      - fastapi
+    ports:
+      - "8050:8050"
+    networks:
+      - oee_network
+
+networks:
+  oee_network:
+
+volumes:
+  db_data:
