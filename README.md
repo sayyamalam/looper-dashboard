@@ -54,5 +54,6 @@ docker compose up
 
 ### Step 5: Open the Dashboard in Your Browser
 Open your browser and navigate to: http://localhost:8050
+
 Note: The tool is optimized for Google Chrome, and we recommend using it for the best experience.
 
