@@ -37,8 +37,8 @@ git clone https://github.com/sayyamalam/looper-dashboard.git
 ```
 
 ### Step 2: Start Docker Desktop
-- Open Docker Desktop on your machine. 
-- If you don't have it installed, download and install it from [Docker](https://www.docker.com/get-started/).
+Open Docker Desktop on your machine. 
+If you don't have it installed, download and install it from [Docker](https://www.docker.com/get-started/).
 
 ### Step 3: Navigate to the `OEE_DB` Directory
 Change into the `OEE_DB` folder inside the cloned repository:
