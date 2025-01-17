@@ -25,6 +25,7 @@ The dashboard is built using:
 ## Prerequisites
 - Ensure **Docker Desktop** is installed on your machine. If not, follow the installation guide: [Docker Get Started](https://www.docker.com/get-started/).
 - Recommended browser: **Google Chrome** for optimal performance.
+- **Supported Architecture**: This project runs only on an **ARM64** architecture.
 
 ---
 
