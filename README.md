@@ -5,7 +5,6 @@ This repository contains a dashboarding tool for processing and visualizing mach
 ## 1. **Live Monitoring**
 - Displays critical machine data in real-time (Aggregate Height, Main Conveyor Belt Speed)
 - Machine state classification is performed live using ML algorithms.
-- Data is fetched from the database every second and classified live.
 
 ## 2. **Batch Analysis**
 - Allows selecting a specific timeframe for analysis.
