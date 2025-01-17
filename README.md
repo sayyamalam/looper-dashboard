@@ -29,7 +29,7 @@ The dashboard is built using:
 ---
 
 ## Getting Started
-Follow these steps to run the dashboard on your local machine:
+Follow these steps to run the dashboard on your local machine.
 
 ### Step 1: Clone the Repository
 ```bash
