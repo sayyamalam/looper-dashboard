@@ -5,7 +5,7 @@ class MaschinenData(Base):
     __tablename__ = "maschinendata"
     
     id = Column(Integer, primary_key=True)  # Dummy-Primärschlüssel
-    _time = Column(DateTime, index= True)  # Neue Spalte für Zeitstempel
+    _time = Column(DateTime, index= True)  
     AggHoeheIst = Column(Float)
     AutomTurmverstellungEin = Column(Float)
     AutomatikLaeuft = Column(Float)

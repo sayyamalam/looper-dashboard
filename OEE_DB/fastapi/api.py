@@ -13,10 +13,10 @@ import numpy as np
 # 1) Modelle laden
 # ------------------------------------------------------------------------------
 random_forest   = load("random-forest-model-smote.pkl")
-neural_network  = load("neural-network-model-smote.pkl")  # MLPClassifier
+neural_network  = load("neural-network-model-smote.pkl")  
 
 # ------------------------------------------------------------------------------
-# 2) CLASS_MAPPING (aktualisiert)
+# 2) CLASS_MAPPING 
 # ------------------------------------------------------------------------------
 CLASS_MAPPING = {
     0: "Block Loading",
@@ -80,7 +80,7 @@ def row_generator_function(db: Session, start_id: Optional[int] = None):
         yield row
 
 # ------------------------------------------------------------------------------
-# 8) Hilfsfunktion NN (statt decision_function => predict_proba)
+# 8) Hilfsfunktion NN statt decision_function => predict_proba)
 # ------------------------------------------------------------------------------
 def neural_network_predict_and_proba(X: np.ndarray):
     """

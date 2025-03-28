@@ -1,6 +1,6 @@
 import datetime
 import requests
-import os  # <--- NEU importieren
+import os  
 import dash_bootstrap_components as dbc
 from dash import Dash, dcc, html, Input, Output, State, no_update
 import plotly.graph_objs as go
@@ -18,7 +18,6 @@ app.title = "Looper Machine Dashboard"
 # ------------------------------------------------------------------------------
 # 2) API-Konfiguration
 # ------------------------------------------------------------------------------
-# NEU: Wir lesen API_BASE_URL aus dem Environment (mit Fallback).
 API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
 ENDPOINT_LIVE = "/data/get_next_row_with_predictions"
 ENDPOINT_BATCH = "/data/get_predictions_for_timeframe"
@@ -255,7 +254,6 @@ def calc_oee(results, model_key):
     if total_sec<1:
         return (0,0,0)
 
-    # Beispiel: Idle = Stillstand, Production = Produktionszeit, Rest = Rüsten
     still = durations["Idle"]
     prod  = durations["Production"]
     ruest = sum(durations[s] for s in durations if s not in ["Idle","Production"])
